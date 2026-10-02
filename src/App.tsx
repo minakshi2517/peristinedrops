@@ -12,7 +12,7 @@ import {
 } from "react";
 import Lenis from "lenis";
 import { CONTACT, IMG, TAGLINE } from "./content";
-import { AboutPage, BrandPage, ContactPage, GalleryPage, HomePage, ProductsPage } from "./pages";
+import { AboutPage, ContactPage, GalleryPage, HomePage, ProductsPage, StoryPage } from "./pages";
 import { ALL, NAV, PAGES, pageFrom, type Go, type Page } from "./routes";
 import { Roll, useFlag } from "./ui";
 
@@ -418,7 +418,7 @@ export default function App() {
         {page === "home" && <HomePage go={go} wide={wide} failed={failed} />}
         {page === "about" && <AboutPage go={go} />}
         {page === "products" && <ProductsPage go={go} failed={failed} />}
-        {page === "brand" && <BrandPage go={go} />}
+        {page === "story" && <StoryPage go={go} />}
         {page === "gallery" && <GalleryPage go={go} />}
         {page === "contact" && <ContactPage go={go} />}
       </main>

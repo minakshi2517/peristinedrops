@@ -141,3 +141,71 @@ export const ENQUIRIES = [
   ["Partnerships", "Collaborations, co-branding and brand projects."],
   ["Press & media", "Brand assets, product images and media enquiries."],
 ];
+
+export const FOUNDER_STORY = {
+  hero: {
+    label: "Founder’s Story",
+    title: ["One vision,", "every single drop."],
+    lead: "Pristine Drops was born out of a simple belief: clean, honest drinking water should be something you never have to think twice about. Here is the journey of why and how we built it.",
+  },
+  origin: {
+    label: "The Beginning",
+    title: ["Why we started", "this journey."],
+    copy: "It started with a real need. In an era where bottled water often feels commoditized and opaque, our founder wanted to bring back absolute honesty to everyday hydration. Setting up a dedicated facility in Zainabad (Rewari, Haryana), the mission was clear: create packaged drinking water crafted with the highest standards of hygiene, mineral balance, and pure taste.",
+    parts: [
+      ["The Purpose", "To make pure, safe, and refreshing water accessible for families, workplaces, and everyday life."],
+      ["The Facility", "State-of-the-art purification and bottling facility built on Kapoori Road, Zainabad."],
+      ["The Discipline", "From multi-stage filtration to hermetic sealing, every step is strictly monitored."],
+      ["The Promise", "Goodness in every drop — printed on every bottle as our personal pledge."],
+    ],
+  },
+  values: [
+    { role: "Pillar 01", name: "Pure Integrity", desc: "Zero compromise on quality", hex: "#007FB4", dark: true },
+    { role: "Pillar 02", name: "Absolute Clarity", desc: "Transparent processes", hex: "#FFFFFF", dark: false },
+    { role: "Pillar 03", name: "Relentless Care", desc: "Meticulous hygiene", hex: "#0A1F2B", dark: true },
+    { role: "Pillar 04", name: "Community First", desc: "Rooted in Haryana", hex: "#EDF2F4", dark: false },
+  ],
+  chapters: [
+    {
+      role: "Chapter 01 · The Genesis",
+      title: "Rooted in Zainabad",
+      copy: "Built with intention in Rewari, Haryana, to deliver drinking water that meets the highest benchmarks of safety and trust.",
+    },
+    {
+      role: "Chapter 02 · The Standard",
+      title: "Multi-Barrier Purity",
+      sample: "01",
+      copy: "Implementing rigorous multi-stage purification, UV sterilization, and balanced mineral infusion for crisp taste.",
+    },
+    {
+      role: "Chapter 03 · The Vision",
+      title: "Everyday Wellness",
+      sample: "∞",
+      copy: "Expanding our reach so households, businesses, and travellers can always access water they can drink with peace of mind.",
+    },
+  ],
+  craft: {
+    label: "Our Daily Craft",
+    title: ["Behind every", "sealed bottle."],
+    copy: "“When you drink a bottle of Pristine Drops, you are not just drinking water. You are experiencing the outcome of unwavering discipline, clean processes, and a founder's commitment to never cut corners.”",
+  },
+  pledge: {
+    label: "Founder’s Pledge",
+    title: ["Our promise,", "unbroken."],
+    doTitle: "What We Stand For",
+    dos: [
+      "Pure, refreshing water meeting strict food-safety and hygiene standards.",
+      "Balanced minerals for a clean, light, and natural taste.",
+      "Hermetically sealed bottles ensuring untouched freshness.",
+      "Honest relationships with retailers, distributors, and customers.",
+    ],
+    dontTitle: "What We Never Do",
+    donts: [
+      "Never compromise on filtration testing or hygiene checks.",
+      "Never use non-food-grade or inferior packaging materials.",
+      "Never make misleading claims or use artificial additives.",
+      "Never take our community’s trust for granted.",
+    ],
+  },
+};
+

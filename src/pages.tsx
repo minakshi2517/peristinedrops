@@ -1,14 +1,13 @@
 import { useRef, useState, type CSSProperties, type FormEvent } from "react";
 import {
   CHAPTERS,
-  COLOURS,
   CONTACT,
   ENQUIRIES,
   FAQS,
   FOCUS,
+  FOUNDER_STORY,
   IMG,
   LABEL_PARTS,
-  LOGO_PARTS,
   PERSONALITY,
   PRINCIPLES,
   PROMISES,
@@ -222,8 +221,8 @@ export function HomePage({ go, wide, failed }: { go: Go; wide: boolean; failed: 
             </li>
             <li>Serif wordmark</li>
           </ul>
-          <PageLink go={go} to="brand" className="text-link reveal">
-            Explore the identity
+          <PageLink go={go} to="story" className="text-link reveal">
+            Read the founder’s story
           </PageLink>
         </div>
       </section>
@@ -349,7 +348,7 @@ export function AboutPage({ go }: { go: Go }) {
         lines={["Let’s make something", <em key="e">refreshing.</em>]}
         copy="Whether you want to stock Pristine Drops or simply learn more about the brand, we would be glad to talk."
         primary={["contact", "Get in touch"]}
-        secondary={["brand", "See the identity"]}
+        secondary={["story", "Read the story"]}
       />
     </>
   );
@@ -457,27 +456,28 @@ export function ProductsPage({ go, failed }: { go: Go; failed: boolean }) {
   );
 }
 
-/* ---------------------------------------------------------------- brand */
+/* ---------------------------------------------------------------- founder story */
 
-export function BrandPage({ go }: { go: Go }) {
+export function StoryPage({ go }: { go: Go }) {
   return (
     <>
       <PageHead
-        label="Brand identity"
-        lines={["A drop, a wave,", <em key="e">a name.</em>]}
-        lead="The Pristine Drops identity is built from a few clear elements: a water drop, flowing waves and a classic serif wordmark, set white on a clear, confident blue."
+        label={FOUNDER_STORY.hero.label}
+        lines={[FOUNDER_STORY.hero.title[0], <em key="e">{FOUNDER_STORY.hero.title[1]}</em>]}
+        lead={FOUNDER_STORY.hero.lead}
+        aside={<Photo img={IMG.studio} className="page-head-photo" caption="A standard built from day one" eager />}
       />
 
       <section className="brand-logo">
-        <Photo img={IMG.logo} className="brand-logo-photo" caption="Primary logo · white on Pristine Blue" eager />
+        <Photo img={IMG.duo} className="brand-logo-photo" caption="Pristine Drops · Born in Zainabad, Haryana" eager />
         <div className="brand-logo-copy">
-          <p className="sec-label reveal">The logo</p>
-          <Lines lines={["The primary", <em key="e">lockup.</em>]} />
+          <p className="sec-label reveal">{FOUNDER_STORY.origin.label}</p>
+          <Lines lines={[FOUNDER_STORY.origin.title[0], <em key="e">{FOUNDER_STORY.origin.title[1]}</em>]} />
           <p className="body-copy reveal" style={d(120)}>
-            The logo stacks the mark above the wordmark. It appears white on Pristine Blue, exactly as it does on the bottle.
+            {FOUNDER_STORY.origin.copy}
           </p>
           <ul className="parts parts--compact">
-            {LOGO_PARTS.map(([title, copy], i) => (
+            {FOUNDER_STORY.origin.parts.map(([title, copy], i) => (
               <li key={title} className="part reveal" style={d(160 + i * 80)}>
                 <h3>{title}</h3>
                 <p>{copy}</p>
@@ -489,19 +489,19 @@ export function BrandPage({ go }: { go: Go }) {
 
       <section className="colours">
         <div className="sec-head">
-          <p className="sec-label reveal">Colour</p>
-          <Lines lines={["Clear blue,", <em key="e">pure white.</em>]} />
+          <p className="sec-label reveal">Guiding Convictions</p>
+          <Lines lines={["Four pillars of", <em key="e">our craft.</em>]} />
         </div>
         <ul className="swatches">
-          {COLOURS.map((colour, i) => (
+          {FOUNDER_STORY.values.map((v, i) => (
             <li
-              key={colour.name}
-              className={`swatch-card reveal${colour.dark ? " is-dark" : ""}`}
-              style={{ ...d(i * 90), background: colour.hex }}
+              key={v.name}
+              className={`swatch-card reveal${v.dark ? " is-dark" : ""}`}
+              style={{ ...d(i * 90), background: v.hex }}
             >
-              <span className="swatch-role">{colour.role}</span>
-              <span className="swatch-name">{colour.name}</span>
-              <span className="swatch-hex">{colour.hex}</span>
+              <span className="swatch-role">{v.role}</span>
+              <span className="swatch-name">{v.name}</span>
+              <span className="swatch-hex">{v.desc}</span>
             </li>
           ))}
         </ul>
@@ -509,67 +509,66 @@ export function BrandPage({ go }: { go: Go }) {
 
       <section className="type">
         <div className="sec-head">
-          <p className="sec-label reveal">Typography</p>
-          <Lines lines={["Classic, calm", <em key="e">and clear.</em>]} />
+          <p className="sec-label reveal">The Journey</p>
+          <Lines lines={["From the first bottle", <em key="e">to the future.</em>]} />
         </div>
         <div className="type-grid">
           <article className="type-card type-card--mark reveal">
-            <span className="type-role">Wordmark</span>
+            <span className="type-role">{FOUNDER_STORY.chapters[0].role}</span>
             <img src={IMG.logoWhite.src} alt="Pristine Drops wordmark" width={IMG.logoWhite.w} height={IMG.logoWhite.h} loading="lazy" decoding="async" />
-            <p>Classic serif capitals, drawn as part of the logo artwork. Always use the supplied file and never retype it.</p>
+            <p>{FOUNDER_STORY.chapters[0].copy}</p>
           </article>
           <article className="type-card reveal" style={d(90)}>
-            <span className="type-role">Display · website</span>
-            <span className="type-sample type-sample--serif">Aa</span>
-            <p className="type-name">Instrument Serif</p>
-            <p>For headlines and large statements. Light, elegant and calm.</p>
+            <span className="type-role">{FOUNDER_STORY.chapters[1].role}</span>
+            <span className="type-sample type-sample--serif">{FOUNDER_STORY.chapters[1].sample}</span>
+            <p className="type-name">{FOUNDER_STORY.chapters[1].title}</p>
+            <p>{FOUNDER_STORY.chapters[1].copy}</p>
           </article>
           <article className="type-card reveal" style={d(180)}>
-            <span className="type-role">Text · website</span>
-            <span className="type-sample type-sample--sans">Aa</span>
-            <p className="type-name">Instrument Sans</p>
-            <p>For body copy, navigation and details. Clean and easy to read.</p>
+            <span className="type-role">{FOUNDER_STORY.chapters[2].role}</span>
+            <span className="type-sample type-sample--sans">{FOUNDER_STORY.chapters[2].sample}</span>
+            <p className="type-name">{FOUNDER_STORY.chapters[2].title}</p>
+            <p>{FOUNDER_STORY.chapters[2].copy}</p>
           </article>
         </div>
       </section>
 
       <section className="application">
         <div className="sec-head">
-          <p className="sec-label reveal">Application</p>
-          <Lines lines={["On the", <em key="e">bottle.</em>]} />
+          <p className="sec-label reveal">{FOUNDER_STORY.craft.label}</p>
+          <Lines lines={[FOUNDER_STORY.craft.title[0], <em key="e">{FOUNDER_STORY.craft.title[1]}</em>]} />
         </div>
         <div className="application-grid">
-          <Photo img={IMG.splash} className="app-photo app-photo--a" caption="The logo on the label, in motion" />
+          <Photo img={IMG.splash} className="app-photo app-photo--a" caption="Pure hydration in every single drop" />
           <div className="application-copy">
             <p className="body-copy reveal">
-              On the bottle, the logo sits white at the centre of a blue wrap, with the tagline <em>“{TAGLINE}”</em> beside it. The same
-              lockup and the same colour, wherever the brand appears.
+              {FOUNDER_STORY.craft.copy}
             </p>
-            <Photo img={IMG.studio} className="app-photo app-photo--b" caption="The label in a still life" delay={120} />
+            <Photo img={IMG.studio} className="app-photo app-photo--b" caption="Carefully sealed and ready for you" delay={120} />
           </div>
         </div>
       </section>
 
       <section className="usage">
         <div className="sec-head">
-          <p className="sec-label reveal">Using the logo</p>
-          <Lines lines={["Keep it", <em key="e">pristine.</em>]} />
+          <p className="sec-label reveal">{FOUNDER_STORY.pledge.label}</p>
+          <Lines lines={[FOUNDER_STORY.pledge.title[0], <em key="e">{FOUNDER_STORY.pledge.title[1]}</em>]} />
         </div>
         <div className="usage-grid">
           <div className="usage-col reveal">
-            <h3>Do</h3>
+            <h3>{FOUNDER_STORY.pledge.doTitle}</h3>
             <ul>
-              <li>Use the supplied logo files.</li>
-              <li>Keep the logo white on Pristine Blue or on a clean, dark background.</li>
-              <li>Give the logo generous space around it.</li>
+              {FOUNDER_STORY.pledge.dos.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
             </ul>
           </div>
           <div className="usage-col usage-col--dont reveal" style={d(100)}>
-            <h3>Don’t</h3>
+            <h3>{FOUNDER_STORY.pledge.dontTitle}</h3>
             <ul>
-              <li>Stretch, squash or rotate the logo.</li>
-              <li>Change its colours or add shadows and effects.</li>
-              <li>Retype the wordmark in another font.</li>
+              {FOUNDER_STORY.pledge.donts.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
             </ul>
           </div>
         </div>
@@ -577,15 +576,17 @@ export function BrandPage({ go }: { go: Go }) {
 
       <Closing
         go={go}
-        label="Brand assets"
-        lines={["Need the", <em key="e">brand files?</em>]}
-        copy="For logo files, product images or brand guidance, get in touch and we will share what you need."
-        primary={["contact", "Request assets"]}
-        secondary={["gallery", "View the gallery"]}
+        label="Join our journey"
+        lines={["Be part of", <em key="e">our story.</em>]}
+        copy="Whether you want to partner with us, stock Pristine Drops or simply learn more about our journey, we would be glad to talk."
+        primary={["contact", "Get in touch"]}
+        secondary={["products", "Explore products"]}
       />
     </>
   );
 }
+
+export { StoryPage as BrandPage };
 
 /* ---------------------------------------------------------------- gallery */
 
