@@ -1,7 +1,5 @@
-// PLACEHOLDER: the email has not been supplied yet; replace it before launch.
-// Empty values are hidden on the site.
 export const CONTACT = {
-  email: "hello@pristinedrops.in",
+  email: "Hiteshkhola4@gmail.com",
   phone: "+91 72066 34438",
   location: "Kapoori Road, Zainabad, District Rewari, Haryana 123411",
   socials: [] as { label: string; href: string }[],
