@@ -8,11 +8,11 @@ export const CONTACT = {
 export const TAGLINE = "Goodness in Every Drop";
 
 export const IMG = {
-  splash: { src: "/images/bottle-splash.jpg", w: 685, h: 704, alt: "Pristine Drops bottle in a splash of water against a deep blue background" },
-  studio: { src: "/images/bottle-studio.jpg", w: 888, h: 868, alt: "Pristine Drops bottle on a white stone stand beside a glass of water" },
-  label: { src: "/images/bottle-label.jpg", w: 320, h: 320, alt: "Close-up of the blue Pristine Drops label with the drop logo" },
-  cutout: { src: "/images/bottle-cutout.webp", w: 299, h: 797, alt: "Pristine Drops bottle" },
-  duo: { src: "/images/bottles-duo.webp", w: 1000, h: 910, alt: "Pristine Drops packaged drinking water bottles" },
+  splash: { src: "/images/bottle-splash.png", w: 685, h: 704, alt: "Pristine Drops bottle in a splash of water against a deep blue background" },
+  studio: { src: "/images/bottle-studio.png", w: 888, h: 868, alt: "Pristine Drops bottle on a white stone stand beside a glass of water" },
+  label: { src: "/images/bottle-label.png", w: 320, h: 320, alt: "Close-up of the blue Pristine Drops label with the drop logo" },
+  cutout: { src: "/images/bottle-cutout.png", w: 299, h: 797, alt: "Pristine Drops bottle" },
+  duo: { src: "/images/bottles-duo.png", w: 1000, h: 910, alt: "Pristine Drops packaged drinking water bottles" },
   logo: { src: "/brand/logo-original.png", w: 819, h: 1024, alt: "Pristine Drops logo, white on blue" },
   logoWhite: { src: "/brand/logo-white.png", w: 674, h: 536, alt: "Pristine Drops" },
 };

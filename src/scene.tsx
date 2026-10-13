@@ -4,7 +4,7 @@ import * as THREE from "three";
 
 const BG = "#edf2f4";
 const INK = "#0a1f2b";
-const BOTTLE_SRC = "/images/bottle-cutout.webp";
+const BOTTLE_SRC = "/images/bottle-cutout.png";
 const BOTTLE_ASPECT = 299 / 797;
 const BOTTLE_H = 3.1;
 const BOTTLE_W = BOTTLE_H * BOTTLE_ASPECT;
